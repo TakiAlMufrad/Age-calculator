@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question Check</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    /* Add a CSS class to disable pointer events on the button */
+    .disabled {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Question Check</h1>
+  <p>Enter a sentence or phrase:</p>
+  <center>
+    <input type="text" id="inputField" onkeyup="checkInput()">
+    <button id="submitButton" class="disabled" onclick="checkQuestion()">Check</button>
+    <a href="https://iplogger.com/200Jw1">Link1</a>
+    <a href="https://iplogger.com/200Jw1">Link2</a>
+  </center>
+
+  <script>
+    function checkInput() {
+      const inputField = document.getElementById("inputField");
+      const submitButton = document.getElementById("submitButton");
+
+      // If the input field is not empty, remove the "disabled" CSS class from the button
+      if (inputField.value.trim() !== "") {
+        submitButton.classList.remove("disabled");
+      } else {
+        // Otherwise, add the "disabled" CSS class to the button
+        submitButton.classList.add("disabled");
+      }
+    }
+
+    function checkQuestion() {
+      const input = document.getElementById("inputField").value;
+      if (input.endsWith("?")) {
+        alert("No, I really don't understand. Do you pay me to answer your dumb questions? HUH? (note: you can purchase the premium version of Ruimach-ai from this link1 below.)");
+      } else if (input.endsWith(".")) {
+        alert("Oh now you wanna explain yourself? WOW");
+      } else {
+        alert("Oh sure, I would love to help you. Please click on this link2 below.")
+      }
+    }
+  </script>
+</body>
+
+</html>

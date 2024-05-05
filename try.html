@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Fields Example</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .fields {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .creature {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fields">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="number" placeholder="Number">
+        </div>
+        <div class="creature" id="creature">🙈</div>
+    </div>
+
+    <script>
+        const nameInput = document.getElementById('name');
+        const numberInput = document.getElementById('number');
+        const creature = document.getElementById('creature');
+
+        nameInput.addEventListener('input', () => {
+            creature.textContent = '🙉';
+        });
+
+        numberInput.addEventListener('focus', () => {
+            creature.textContent = '🙈';
+        });
+
+        numberInput.addEventListener('blur', () => {
+            creature.textContent = '🙉';
+        });
+    </script>
+</body>
+</html>
